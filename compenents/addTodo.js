@@ -4,6 +4,7 @@ import {
   View,
   TextInput,
   Button,
+  Keyboard,
 } from 'react-native';
 
 export default function AddTodo({submitHandler}) {
@@ -20,13 +21,14 @@ export default function AddTodo({submitHandler}) {
             placeholder = 'new todo...'
             onChangeText= {changeHandler}/>
             <Button onPress= { () => {
+                Keyboard.dismiss();
                 if(text.length === 0){
                     alert('Lütfen todo giriniz!')
                 }else{
                     submitHandler(text);
                 }
 
-            }} title= 'add todo'  color= 'dimgray'/>
+            }} title= 'add todo'  color= 'coral'/>
         </View>
     )
 }

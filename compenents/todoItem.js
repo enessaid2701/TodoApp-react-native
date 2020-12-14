@@ -13,7 +13,7 @@ export default function TodoItem({ item, pressHandler, submitHandler }) {
     return (
         <View style={styles.item}>
             <TouchableOpacity>
-                <Button onPress={() => pressHandler(item.key)} title='delete' color='dimgray' />
+                <Button onPress={() => pressHandler(item.key)} title='delete' color='coral' />
             </TouchableOpacity>
             <TextInput style={styles.item}>{item.text}
             </TextInput>

@@ -12,7 +12,8 @@ import AddTodo from './compenents/addTodo';
 
 
 export default function App  () {
-  const [todos, setTodos] = useState();
+  const [todos, setTodos] = useState([]);
+  
 
   const pressHandler = (key) => {
     setTodos((prevTodos) =>{
@@ -53,8 +54,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor:  '#EFEFF9',
- //   alignItems: 'center',
-  //  justifyContent: "center",
+
   },
   content: {
     padding : 40,

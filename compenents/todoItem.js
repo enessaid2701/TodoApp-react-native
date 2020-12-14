@@ -1,27 +1,34 @@
 import React from 'react';
 import {
-  StyleSheet,
-  Text,
-  TouchableOpacity,
+    Button,
+    StyleSheet,
+    Text,
+    TextInput,
+    TouchableOpacity,
+    View,
 } from 'react-native';
 
-export default function TodoItem( { item, pressHandler } ) {
-    
-    return(
-        <TouchableOpacity onPress= {() => pressHandler(item.key)}>
-            <Text  style = {styles.item}>{item.text}</Text>
-        </TouchableOpacity>
+export default function TodoItem({ item, pressHandler, submitHandler }) {
+
+    return (
+        <View style={styles.item}>
+            <TouchableOpacity>
+                <Button onPress={() => pressHandler(item.key)} title='delete' color='dimgray' />
+            </TouchableOpacity>
+            <TextInput style={styles.item}>{item.text}
+            </TextInput>
+        </View>
     )
 }
 
 const styles = StyleSheet.create({
-    item : { 
-        padding:16,
+    item: {
+        padding: 16,
         marginTop: 16,
-        borderColor :'#bbb',
+        borderColor: '#bbb',
         borderWidth: 1,
         borderStyle: 'dashed',
-        borderRadius:10,
-        
+        borderRadius: 10,
+
     }
 })
